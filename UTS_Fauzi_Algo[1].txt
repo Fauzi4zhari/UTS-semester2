@@ -1,0 +1,60 @@
+program UTS;
+uses crt;
+const
+   MAXS=10;
+
+var
+   i:integer;
+   A:array[1..10] of integer;
+
+   procedure klik();
+   begin
+   i:=i-1;
+   end;
+
+   function klek(x:integer):integer;
+   begin
+   if (x=MAXS)then
+   begin
+      klek:=A[x]*A[1];
+      end
+   else
+   begin
+      klek:=A[x]*A[x+1];
+      write('| A[x] ',A[X],'| A[x+1] ',A[x+1]);
+      write('| Klek bernilai : ',klek);
+      end;
+   end;
+
+   function klok():integer;
+   var
+      tmp:integer;
+   begin
+   if(i=0)then
+      klok:=i
+   else
+      begin
+      tmp:=1;
+      klik();
+      klok:=klok()+klek(tmp);
+      writeln('| Klok bernilai : ',klok);
+      end;
+   end;
+
+begin
+A[1]:=1;
+A[2]:=2;
+A[3]:=3;
+A[4]:=4;
+A[5]:=5;
+A[6]:=6;
+A[8]:=7;
+A[7]:=8;
+A[9]:=9;
+A[10]:=11;
+
+i:=10; //jika ini dirubah maka hasil fungsi berubah
+writeln('Hasil :');
+writeln(klok(),' ini adalah hasil dari fungsi');
+readln;
+end.
